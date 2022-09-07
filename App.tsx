@@ -9,6 +9,10 @@
  */
 
 import React, {type PropsWithChildren} from 'react';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { Message } from './messageComponents';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -65,6 +69,10 @@ const App = () => {
   };
 
   return (
+    <Provider store={store}>
+    <Message></Message>
+  </Provider>
+
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
